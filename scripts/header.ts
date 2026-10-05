@@ -1,9 +1,8 @@
 // Renders assets/header-{light,dark}.svg: a terminal that types `bun whoami.ts`
 // and prints the real output of whoami.ts, then Mimlet hops in.
 // Run with `bun scripts/header.ts` after editing whoami.ts.
-import { readFileSync } from 'node:fs';
 import { jeffrey } from '../whoami.ts';
-import { esc, mono, sans, themes, type Theme } from './theme.ts';
+import { esc, mascot, mono, sans, themes, type Theme } from './theme.ts';
 
 const W = 780;
 const PAD = 26;
@@ -36,14 +35,6 @@ function tokenize(line: string): Token[] {
     tokens.push({ col: m.index!, text: m[0], kind });
   }
   return tokens;
-}
-
-function mascot(file: string) {
-  const svg = readFileSync(new URL(`../assets/mimlet/${file}`, import.meta.url), 'utf8');
-  return svg
-    .replace(/^<svg[^>]*>/, '')
-    .replace(/<\/svg>\s*$/, '')
-    .replace(/<title[^>]*>.*?<\/title>|<desc[^>]*>.*?<\/desc>/g, '');
 }
 
 function render(t: Theme, mark: string) {

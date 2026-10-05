@@ -44,14 +44,14 @@ export const jeffrey = fromZod(Developer)
 
 Typed test data from the schemas you already have. [Docs](https://jeffreynijs.github.io/mimlet/) · [Try it](https://jeffreynijs.github.io/mimlet/guide/try-it.html)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JeffreyNijs/JeffreyNijs/output/weekends-dark.svg">
+  <img alt="Mimlet checks a year of contributions against &quot;weekends are for resting&quot;, flags the weekend days that fail, and shrinks them down to the worst one." src="https://raw.githubusercontent.com/JeffreyNijs/JeffreyNijs/output/weekends-light.svg" width="100%">
+</picture>
+
 <br>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JeffreyNijs/JeffreyNijs/output/rhythm-dark.svg">
   <img alt="Contributions over the last 12 months: total, active days, streaks, and a breakdown by weekday." src="https://raw.githubusercontent.com/JeffreyNijs/JeffreyNijs/output/rhythm-light.svg" width="100%">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JeffreyNijs/JeffreyNijs/output/snake-dark.svg">
-  <img alt="A coral snake eating the contribution graph." src="https://raw.githubusercontent.com/JeffreyNijs/JeffreyNijs/output/snake-light.svg" width="100%">
 </picture>

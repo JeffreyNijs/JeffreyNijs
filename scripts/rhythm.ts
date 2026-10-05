@@ -1,32 +1,11 @@
 // Renders dist/rhythm-{light,dark}.svg from the last year of contributions.
 // Runs daily in .github/workflows/profile.yml; locally:
 //   GITHUB_TOKEN=$(gh auth token) bun scripts/rhythm.ts
+import { fetchCalendar, fmt, MONTHS, WEEKDAYS } from './calendar.ts';
 import { esc, sans, themes, type Theme } from './theme.ts';
 
-const login = process.env.PROFILE_USER ?? process.env.GITHUB_REPOSITORY_OWNER ?? 'JeffreyNijs';
-const token = process.env.GITHUB_TOKEN;
-if (!token) throw new Error('GITHUB_TOKEN is required');
-
-type Day = { date: string; contributionCount: number; weekday: number };
-
-const res = await fetch('https://api.github.com/graphql', {
-  method: 'POST',
-  headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    query: `query($login: String!) { user(login: $login) { contributionsCollection {
-      restrictedContributionsCount
-      contributionCalendar { totalContributions weeks { contributionDays { date contributionCount weekday } } }
-    } } }`,
-    variables: { login },
-  }),
-});
-const json: any = await res.json();
-if (!res.ok || json.errors) throw new Error(`GitHub API: ${JSON.stringify(json.errors ?? json)}`);
-
-const collection = json.data.user.contributionsCollection;
-const total: number = collection.contributionCalendar.totalContributions;
-const days: Day[] = collection.contributionCalendar.weeks.flatMap((w: any) => w.contributionDays);
-const privateShare = total ? collection.restrictedContributionsCount / total : 0;
+const { total, restricted, days } = await fetchCalendar();
+const privateShare = total ? restricted / total : 0;
 
 // Stats
 const activeDays = days.filter((d) => d.contributionCount > 0).length;
@@ -41,10 +20,7 @@ for (let i = days.length - 1; i >= 0; i--) {
   else if (i === days.length - 1) continue; // today isn't over yet
   else break;
 }
-const busiest = days.reduce((a, b) => (b.contributionCount > a.contributionCount ? b : a));
 
-const WEEKDAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const ORDER = [1, 2, 3, 4, 5, 6, 0]; // Monday first
 const byWeekday = ORDER.map((wd) => ({
   wd,
@@ -53,19 +29,6 @@ const byWeekday = ORDER.map((wd) => ({
 }));
 const peak = byWeekday.reduce((a, b) => (b.total > a.total ? b : a));
 
-const fmt = (n: number) => n.toLocaleString('en-US');
-const dayLabel = (iso: string) => {
-  const d = new Date(`${iso}T00:00:00Z`);
-  return `${WEEKDAYS[d.getUTCDay()]} ${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]}`;
-};
-const weekend = busiest.weekday === 0 || busiest.weekday === 6;
-const quip = [
-  `${WEEKDAYS[peak.wd]}s are for shipping.`,
-  `Busiest day was ${dayLabel(busiest.date)} (${fmt(busiest.contributionCount)}).`,
-  weekend ? `We don't talk about that.` : '',
-]
-  .filter(Boolean)
-  .join(' ');
 const now = new Date();
 const footnote = [
   privateShare >= 0.01 ? `${Math.round(privateShare * 100)}% of it in private repos` : '',
@@ -76,7 +39,7 @@ const footnote = [
 
 // Layout
 const W = 780;
-const H = 290;
+const H = 262;
 const PAD = 28;
 const CHART_X = 440;
 const CHART_W = W - PAD - CHART_X;
@@ -108,7 +71,7 @@ function render(t: Theme) {
   const tile = (x: number, value: string, label: string) =>
     `<text x="${x}" y="176" class="tile" fill="${t.text}">${value}</text><text x="${x}" y="196" class="small" fill="${t.muted}">${label}</text>`;
 
-  const desc = `${fmt(total)} contributions in the last 12 months over ${activeDays} active days; longest streak ${longest} days, current streak ${current} days. By weekday: ${byWeekday.map((d) => `${d.label} ${fmt(d.total)}`).join(', ')}. ${quip} ${footnote}.`;
+  const desc = `${fmt(total)} contributions in the last 12 months over ${activeDays} active days; longest streak ${longest} days, current streak ${current} days. By weekday: ${byWeekday.map((d) => `${d.label} ${fmt(d.total)}`).join(', ')}. ${footnote}.`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="title desc">
   <title id="title">Contribution rhythm</title>
@@ -121,7 +84,6 @@ function render(t: Theme) {
     .tile { font-size: 22px; font-weight: 600; }
     .small { font-size: 12.5px; }
     .value { font-size: 12.5px; font-weight: 600; }
-    .quip { font-size: 13.5px; }
   </style>
   <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="11.5" fill="${t.surface}" stroke="${t.border}"/>
 
@@ -138,12 +100,11 @@ function render(t: Theme) {
     ${bars}
 
   <path d="M${PAD} 222.5H${W - PAD}" stroke="${t.border}"/>
-  <text x="${PAD}" y="250" class="quip" fill="${t.secondary}">${esc(quip)}</text>
-  <text x="${PAD}" y="270" class="small" fill="${t.muted}">${esc(footnote)}</text>
+  <text x="${PAD}" y="246" class="small" fill="${t.muted}">${esc(footnote)}</text>
 </svg>
 `;
 }
 
 await Bun.write(new URL('../dist/rhythm-light.svg', import.meta.url), render(themes.light));
 await Bun.write(new URL('../dist/rhythm-dark.svg', import.meta.url), render(themes.dark));
-console.log(`rhythm: ${fmt(total)} contributions, peak ${peak.label}, busiest ${busiest.date}`);
+console.log(`rhythm: ${fmt(total)} contributions, peak ${peak.label}`);
