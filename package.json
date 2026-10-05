@@ -1,0 +1,14 @@
+{
+  "name": "jeffreynijs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "whoami": "bun whoami.ts",
+    "header": "bun scripts/header.ts",
+    "rhythm": "bun scripts/rhythm.ts"
+  },
+  "devDependencies": {
+    "@mimlet/zod": "0.1.0-beta.2",
+    "zod": "4.6.5"
+  }
+}

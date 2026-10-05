@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="305" viewBox="0 0 780 305" role="img" aria-labelledby="title desc">
+  <title id="title">bun whoami.ts</title>
+  <desc id="desc">A terminal runs bun whoami.ts and prints: { name: &quot;Jeffrey Nijs&quot;, role: &quot;Fullstack developer @ Wisemen&quot;, basedIn: &quot;Hasselt, BE&quot;, stack: [ &quot;TypeScript&quot;, &quot;Nuxt&quot;, &quot;NestJS&quot;, &quot;Bun + Elysia&quot;, &quot;Postgres&quot; ], building: &quot;Mimlet&quot;, coffeesToday: 6, }</desc>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 15px; }
+    .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 13px; }
+    .type { transform: translateX(179px); animation: type 1s steps(13, end) 0.7s both; }
+    @keyframes type { from { transform: translateX(62px); } to { transform: translateX(179px); } }
+    .tcur { opacity: 0; animation: tcur 1.8499999999999999s linear; }
+    @keyframes tcur { from, to { opacity: 1; } }
+    .in { animation: in .14s ease-out both; }
+    @keyframes in { from { opacity: 0; } to { opacity: 1; } }
+    .blink { animation: blink 1.1s steps(1, end) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .hop { animation: hop .75s cubic-bezier(.34, 1.56, .64, 1) 2.73s both; }
+    @keyframes hop { from { transform: translateY(110.54054054054055px); } to { transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { .type, .tcur, .in, .blink, .hop { animation: none; } }
+  </style>
+  <defs><clipPath id="win"><rect width="780" height="305" rx="12"/></clipPath></defs>
+  <g clip-path="url(#win)">
+    <rect width="780" height="305" fill="#152725"/>
+    <rect width="780" height="38" fill="#1b302d"/>
+    <path d="M0 37.5H780" stroke="#2b4540"/>
+    <circle cx="22" cy="19" r="6" fill="#f27b62"/>
+    <circle cx="42" cy="19" r="6" fill="#b6ef86"/>
+    <circle cx="62" cy="19" r="6" fill="#5f7a72"/>
+    <text class="title" x="390" y="23.5" text-anchor="middle" fill="#9bada5">jeffrey@hasselt: ~</text>
+
+    <text x="26" y="68" fill="#b6ef86">~</text><text x="44" y="68" fill="#9bada5">$</text>
+    <text x="62" y="68" fill="#faf7ee" textLength="117" lengthAdjust="spacing">bun whoami.ts</text>
+    <g class="type">
+      <rect x="0" y="52" width="126" height="22" fill="#152725"/>
+      <rect class="tcur" x="0" y="54" width="9" height="18" fill="#faf7ee"/>
+    </g>
+
+    <text class="in" style="animation-delay:1.95s" y="91"><tspan x="26" fill="#9bada5">{</tspan></text>
+    <text class="in" style="animation-delay:2.01s" y="114"><tspan x="44" fill="#faf7ee">name</tspan><tspan x="80" fill="#9bada5">:</tspan><tspan x="98" fill="#b6ef86">&quot;Jeffrey Nijs&quot;</tspan><tspan x="224" fill="#9bada5">,</tspan></text>
+    <text class="in" style="animation-delay:2.07s" y="137"><tspan x="44" fill="#faf7ee">role</tspan><tspan x="80" fill="#9bada5">:</tspan><tspan x="98" fill="#b6ef86">&quot;Fullstack developer @ Wisemen&quot;</tspan><tspan x="377" fill="#9bada5">,</tspan></text>
+    <text class="in" style="animation-delay:2.13s" y="160"><tspan x="44" fill="#faf7ee">basedIn</tspan><tspan x="107" fill="#9bada5">:</tspan><tspan x="125" fill="#b6ef86">&quot;Hasselt, BE&quot;</tspan><tspan x="242" fill="#9bada5">,</tspan></text>
+    <text class="in" style="animation-delay:2.19s" y="183"><tspan x="44" fill="#faf7ee">stack</tspan><tspan x="89" fill="#9bada5">:</tspan><tspan x="107" fill="#9bada5">[</tspan><tspan x="125" fill="#b6ef86">&quot;TypeScript&quot;</tspan><tspan x="233" fill="#9bada5">,</tspan><tspan x="251" fill="#b6ef86">&quot;Nuxt&quot;</tspan><tspan x="305" fill="#9bada5">,</tspan><tspan x="323" fill="#b6ef86">&quot;NestJS&quot;</tspan><tspan x="395" fill="#9bada5">,</tspan><tspan x="413" fill="#b6ef86">&quot;Bun + Elysia&quot;</tspan><tspan x="539" fill="#9bada5">,</tspan><tspan x="557" fill="#b6ef86">&quot;Postgres&quot;</tspan><tspan x="656" fill="#9bada5">]</tspan><tspan x="665" fill="#9bada5">,</tspan></text>
+    <text class="in" style="animation-delay:2.25s" y="206"><tspan x="44" fill="#faf7ee">building</tspan><tspan x="116" fill="#9bada5">:</tspan><tspan x="134" fill="#b6ef86">&quot;Mimlet&quot;</tspan><tspan x="206" fill="#9bada5">,</tspan></text>
+    <text class="in" style="animation-delay:2.31s" y="229"><tspan x="44" fill="#faf7ee">coffeesToday</tspan><tspan x="152" fill="#9bada5">:</tspan><tspan x="170" fill="#f27b62">6</tspan><tspan x="179" fill="#9bada5">,</tspan></text>
+    <text class="in" style="animation-delay:2.37s" y="252"><tspan x="26" fill="#9bada5">}</tspan></text>
+
+    <g class="in" style="animation-delay:2.58s">
+      <text x="26" y="275" fill="#b6ef86">~</text><text x="44" y="275" fill="#9bada5">$</text>
+      <rect class="blink" x="62" y="261" width="9" height="18" fill="#faf7ee"/>
+    </g>
+
+    <g class="hop">
+      <svg x="630" y="207.45945945945945" width="124" height="100.54054054054055" viewBox="0 0 148 120"><g transform="translate(0 0) scale(1)"><g transform="translate(-1 -18) scale(.65)"><g stroke="#faf7ee" stroke-width="13" stroke-linejoin="round" fill="none"><path d="M49 96C49 60 69 50 98 47L142 43C151 42 156 46 164 53L185 74C190 80 192 86 192 96L193 139C194 160 185 173 164 177L133 178L107 178L76 177C56 172 49 160 49 139Z"/><path d="M76 173L75 180Q71 192 88 192Q104 193 107 178M133 178Q134 192 149 192Q168 193 164 177"/></g><g transform="translate(120 183) rotate(0) scale(1 1) translate(-120 -183) translate(0 0)"><g fill="#b6ef86"><path d="M76 172H107V181H76ZM134 172H163V181H134Z"/></g><g fill="#b6ef86" stroke="#152725" stroke-width="6.9" stroke-linecap="round" stroke-linejoin="round"><path d="M76 173L75 180Q71 192 88 192Q104 193 107 178"/><path d="M133 178Q134 192 149 192Q168 193 164 177"/></g><g><path fill="#b6ef86" d="M49 96C49 60 69 50 98 47L142 43C151 42 156 46 164 53L185 74C190 80 192 86 192 96L193 139C194 160 185 173 164 177L133 178L107 178L76 177C56 172 49 160 49 139Z"/></g><g><path d="M147 43.8C153 43.8 157 46.9 164 53L185 74Q189 78.8 190.5 83.5L165 83.5C153 83.5 148 79 148 66Z" fill="#faf7ee"/><path d="M147 44L148 66C148 79 153 83.5 165 83.5H190.5" fill="none" stroke="#152725" stroke-width="6.1" stroke-linecap="round" stroke-linejoin="round"/></g><g><path d="M76 177C56 172 49 160 49 139V96C49 60 69 50 98 47L142 43C151 42 156 46 164 53L185 74C190 80 192 86 192 96L193 139C194 160 185 173 164 177M133 178H107" fill="none" stroke="#152725" stroke-width="6.9" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(0 0) scale(1 1)"><g fill="#152725" transform="translate(0 0)"><ellipse cx="94" cy="113" rx="9.2" ry="13.8" transform="rotate(-5 94 113)"/><ellipse cx="139.5" cy="105.5" rx="9.2" ry="13.8" transform="rotate(-4 139.5 105.5)"/></g></g><g><ellipse cx="159" cy="122" rx="10" ry="7" fill="#f27b62"/></g><g stroke="#152725" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"><path d="M110.8 132.9C115.5 136.8 125.7 138 129 129.8" fill="none" stroke-width="6.8"/></g></g></g></g></svg>
+    </g>
+  </g>
+  <rect x=".5" y=".5" width="779" height="304" rx="11.5" fill="none" stroke="#2b4540"/>
+</svg>
