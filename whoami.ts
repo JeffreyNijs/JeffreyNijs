@@ -17,7 +17,7 @@ export const jeffrey = fromZod(Developer)
     basedIn: 'Hasselt, BE',
     stack: ['TypeScript', 'Nuxt', 'NestJS', 'Bun + Elysia', 'Postgres'],
     building: 'Mimlet',
-  }) // coffeesToday is left to Mimlet
+  }) // coffeesToday: left to Mimlet (it's 6, every run)
   .buildValidated();
 
 if (import.meta.main) console.log(jeffrey);

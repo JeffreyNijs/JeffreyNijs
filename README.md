@@ -3,10 +3,8 @@
   <img alt="A terminal runs bun whoami.ts and prints Jeffrey Nijs: fullstack developer at Wisemen in Hasselt, Belgium, working in TypeScript, Nuxt, NestJS, Bun with Elysia and Postgres, building Mimlet." src="assets/header-light.svg" width="100%">
 </picture>
 
-Hi, I'm Jeffrey, a fullstack developer at [Wisemen](https://wisemen.digital) in Hasselt, Belgium. I write TypeScript end to end: Nuxt on the front, NestJS or Bun + Elysia on the back, Postgres underneath. Most of that work lives in private client repos. The open-source part is Mimlet.
-
 <details>
-<summary>The terminal above is real output. Here's <code>whoami.ts</code>.</summary>
+<summary><code>whoami.ts</code></summary>
 <br>
 
 ```ts
@@ -29,11 +27,9 @@ export const jeffrey = fromZod(Developer)
     basedIn: 'Hasselt, BE',
     stack: ['TypeScript', 'Nuxt', 'NestJS', 'Bun + Elysia', 'Postgres'],
     building: 'Mimlet',
-  }) // coffeesToday is left to Mimlet
+  }) // coffeesToday: left to Mimlet (it's 6, every run)
   .buildValidated();
 ```
-
-Nothing sets `coffeesToday`, so Mimlet generates a valid one. It's 6 on every run, because Mimlet fixtures are replayable.
 
 </details>
 
@@ -46,9 +42,7 @@ Nothing sets `coffeesToday`, so Mimlet generates a valid one. It's 6 on every ru
   </picture>
 </a>
 
-**Test data, with character.** Mimlet builds typed fixtures from the schemas you already have (Zod, Valibot, ArkType, TypeBox, Effect, JSON Schema, OpenAPI, GraphQL and more) and checks them against your own validation. Link related records into scenarios that stay consistent, and when a property-based test fails, shrink it and replay it later.
-
-[Docs](https://jeffreynijs.github.io/mimlet/) · [Try it in your browser](https://jeffreynijs.github.io/mimlet/guide/try-it.html) · [Source](https://github.com/JeffreyNijs/mimlet)
+Typed test data from the schemas you already have. [Docs](https://jeffreynijs.github.io/mimlet/) · [Try it](https://jeffreynijs.github.io/mimlet/guide/try-it.html)
 
 <br>
 
