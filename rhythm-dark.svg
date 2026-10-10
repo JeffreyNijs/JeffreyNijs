@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="262" viewBox="0 0 780 262" role="img" aria-labelledby="title desc">
+  <title id="title">Contribution rhythm</title>
+  <desc id="desc">8,614 contributions in the last 12 months over 303 active days; longest streak 48 days, current streak 19 days. By weekday: Mon 1,382, Tue 1,542, Wed 1,591, Thu 1,759, Fri 1,259, Sat 406, Sun 675. 96% of it in private repos · updated 10 Oct 2026.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+    .label { font-size: 13px; font-weight: 500; }
+    .hero { font-size: 52px; font-weight: 650; letter-spacing: -1px; }
+    .sub { font-size: 15px; }
+    .tile { font-size: 22px; font-weight: 600; }
+    .small { font-size: 12.5px; }
+    .value { font-size: 12.5px; font-weight: 600; }
+  </style>
+  <rect x=".5" y=".5" width="779" height="261" rx="11.5" fill="#152725" stroke="#2b4540"/>
+
+  <circle cx="32" cy="35.5" r="4" fill="#b6ef86"/>
+  <text x="42" y="40" class="label" fill="#9bada5">Last 12 months</text>
+  <text x="26" y="100" class="hero" fill="#faf7ee">8,614</text>
+  <text x="28" y="126" class="sub" fill="#c9d3cb">contributions</text>
+  <text x="28" y="176" class="tile" fill="#faf7ee">303</text><text x="28" y="196" class="small" fill="#9bada5">active days</text>
+  <text x="168" y="176" class="tile" fill="#faf7ee">48 days</text><text x="168" y="196" class="small" fill="#9bada5">longest streak</text>
+  <text x="308" y="176" class="tile" fill="#faf7ee">19 days</text><text x="308" y="196" class="small" fill="#9bada5">current streak</text>
+
+  <text x="440" y="40" class="label" fill="#9bada5">By weekday</text>
+  <path d="M440 176.5H752" stroke="#2b4540"/>
+    <g><title>Mon: 1,382</title><path d="M450.2857142857143 176V95Q450.2857142857143 91 454.2857142857143 91H470.2857142857143Q474.2857142857143 91 474.2857142857143 95V176Z" fill="#5f7a72"/><text x="462.2857142857143" y="196" text-anchor="middle" class="small" fill="#9bada5">Mon</text></g>
+    <g><title>Tue: 1,542</title><path d="M494.85714285714283 176V85Q494.85714285714283 81 498.85714285714283 81H514.8571428571429Q518.8571428571429 81 518.8571428571429 85V176Z" fill="#5f7a72"/><text x="506.85714285714283" y="196" text-anchor="middle" class="small" fill="#9bada5">Tue</text></g>
+    <g><title>Wed: 1,591</title><path d="M539.4285714285714 176V82Q539.4285714285714 78 543.4285714285714 78H559.4285714285714Q563.4285714285714 78 563.4285714285714 82V176Z" fill="#5f7a72"/><text x="551.4285714285714" y="196" text-anchor="middle" class="small" fill="#9bada5">Wed</text></g>
+    <g><title>Thu: 1,759</title><path d="M584.0000000000001 176V72Q584.0000000000001 68 588.0000000000001 68H604.0000000000001Q608.0000000000001 68 608.0000000000001 72V176Z" fill="#b6ef86"/><text x="596.0000000000001" y="60" text-anchor="middle" class="value" fill="#c9d3cb">1,759</text><text x="596.0000000000001" y="196" text-anchor="middle" class="small" fill="#faf7ee">Thu</text></g>
+    <g><title>Fri: 1,259</title><path d="M628.5714285714286 176V103Q628.5714285714286 99 632.5714285714286 99H648.5714285714286Q652.5714285714286 99 652.5714285714286 103V176Z" fill="#5f7a72"/><text x="640.5714285714286" y="196" text-anchor="middle" class="small" fill="#9bada5">Fri</text></g>
+    <g><title>Sat: 406</title><path d="M673.1428571428572 176V155Q673.1428571428572 151 677.1428571428572 151H693.1428571428572Q697.1428571428572 151 697.1428571428572 155V176Z" fill="#5f7a72"/><text x="685.1428571428572" y="196" text-anchor="middle" class="small" fill="#9bada5">Sat</text></g>
+    <g><title>Sun: 675</title><path d="M717.7142857142858 176V139Q717.7142857142858 135 721.7142857142858 135H737.7142857142858Q741.7142857142858 135 741.7142857142858 139V176Z" fill="#5f7a72"/><text x="729.7142857142858" y="196" text-anchor="middle" class="small" fill="#9bada5">Sun</text></g>
+
+  <path d="M28 222.5H752" stroke="#2b4540"/>
+  <text x="28" y="246" class="small" fill="#9bada5">96% of it in private repos · updated 10 Oct 2026</text>
+</svg>
